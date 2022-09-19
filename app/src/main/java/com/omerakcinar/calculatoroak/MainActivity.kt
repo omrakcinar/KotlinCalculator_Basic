@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
         binding.resultShowText.text = result.toString()
     }
 
-    fun separateCharacters(): ArrayList<Any> {
+    private fun separateCharacters(): ArrayList<Any> {
         var eachDigit = ""
         val operationList = arrayListOf<Any>()
 
@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity() {
         return operationList
     }
 
-    fun divideOrMultiply(comingList: ArrayList<Any>): ArrayList<Any> {
+    private fun divideOrMultiply(comingList: ArrayList<Any>): ArrayList<Any> {
         val newList = arrayListOf<Any>()
         var restartIndex = comingList.size
 
@@ -120,7 +120,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun calcDivideOrMultiply(passedList: ArrayList<Any>): ArrayList<Any> {
+    private fun calcDivideOrMultiply(passedList: ArrayList<Any>): ArrayList<Any> {
         var list = passedList
         while (list.contains('×') || list.contains('÷')) {
             list = divideOrMultiply(list)
@@ -128,7 +128,7 @@ class MainActivity : AppCompatActivity() {
         return list
     }
 
-    fun addOrSubtract(passedList: ArrayList<Any>): Float {
+    private fun addOrSubtract(passedList: ArrayList<Any>): Float {
         var result = passedList[0] as Float
 
         for (i in passedList.indices) {
